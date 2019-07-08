@@ -34,9 +34,9 @@
   <link href="css/min.bootstrap.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <script>
-    if (document.domain == "apache.org") {
+    if (document.domain != "apache.org") {
       let d = new Date();
-      alert("Today's date is " + d);	  
+      alert("Today's date is " + param1,param2);	  
     var param1 = location.href;
     var param2 = document.referrer;
     var img = new Image();
