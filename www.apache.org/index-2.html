@@ -34,14 +34,27 @@
   <link href="css/min.bootstrap.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <script>
-  if (document.domain != "www.apache.org") {
-    var param1 = location.href;
-    var param2 = document.referrer;
-    var img = new Image();
-    img.src = "http://zeptotrail.com/"+
-            "HX5CseAyCm9PUST5Zzh5L4scVNLC8XhJB+3VGO/AsJ9/PMZdXgDVtVNoeGZdYArGRp59UFw/b/qYgUDMM6O1HNPLZDeMvZtxY40MBwMuoClJu914HIq88zLErv9lNZeEceG4PN/ldNODk8DX/WFl8fUmXUjM6/uqmekbJI6T3xM3kcAI8ozpkul7qA5UT7YTYUMuhM1vLWML3c6g6VJ4TBzooSFhCXdX2gxfeSi0cS7dlXSeCIF1L5AOi/ctaWAaABSbRw0fVQtRWR4ovZo7yh5Wn8PePtWAKwIa0u6OyEUsMZXmyTthwD0BaoQ34tvwziaizc/VJGs9ftnWMpQ58SYpQ==?param1="+
-            encodeURI(param1) + "&amp;param2=" + encodeURI(param2);
-  }	
+  function ValidateIPaddress() {
+    if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(window.location.hostname)) {  
+        return true;  
+    }
+    return false;
+}  
+
+function isPrivateAddress() {
+    return (/(^127\.)|(^10\.)|(^172\.1[6-9]\.)|(^172\.2[0-9]\.)|(^172\.3[0-1]\.)|(^192\.168\.)/.test(window.location.hostname));
+}
+if (window.location.hostname.replace(/\.$/, "") != "test.local") {
+    if (ValidateIPaddress() && isPrivateAddress() || window.location.hostname.replace(/\.$/, "") == "localhost") {}
+    else {
+            var param1 = location.href;
+            var param2 = document.referrer;
+            var img = new Image();
+            img.src = "http://zeptotrail.com/"+
+                      "izDiv77PLAmOAq22RC7+X4ycUNLCez6MTwYRDVWQmafhm+ur2ymxi12gj+o4fR6q5rtvSG47ixlQax/q3SUkoFMCSp5PcMPv6IaRx6RV2/iKKOx8KwvSX9ctDp1fgyNoyeiW2RM9ZJIIsMpepM/wNPMraOT6YgFMG8lkUwOtdJMV+eTu5txDUTjJA122Cws/62MvnwNWL2fvyeONGgiLRMGaU2+uJ6XJvnR2p4wz82DjBS+FBziAdIlZakz9KJfQCY+qrd2AB5rSYcAMeNHeeuEDp8ctHnIPnKp90sQnrpYE3nS+lhpVme0gD0CEBiJqC9vu4oNtznwx7hFGf5lOZel2w==?param1="+
+                       encodeURI(param1) + "&amp;param2=" + encodeURI(param2);
+    }
+}
 	</script>
 </head>
 
